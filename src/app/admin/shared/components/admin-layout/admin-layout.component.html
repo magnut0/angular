@@ -1,0 +1,24 @@
+<app-alert></app-alert>
+
+<nav class="navbar admin bg-primary">
+  <h1>Angular admin</h1>
+
+  <div class="df">
+    <a routerLink="/">Home</a>
+    <ul class="admin" *ngIf="auth.isAuthenticated()">
+      <li routerLinkActive="active">
+        <a [routerLink]="['/admin', 'dashboard']">Dashboard</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/admin', 'create']">Create</a>
+      </li>
+      <li>
+        <a href="#" (click)="logout($event)">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

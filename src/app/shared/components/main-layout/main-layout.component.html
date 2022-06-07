@@ -1,0 +1,19 @@
+<nav class="navbar main">
+  <h1>Angular blog</h1>
+  <a
+    class="jsfe"
+    [routerLink]="['/admin', 'dashboard']"
+    *ngIf="auth.isAuthenticated()"
+    >Admin</a
+  >
+  <a
+    class="jsfe"
+    [routerLink]="['/admin']"
+    *ngIf="auth.isAuthenticated() === false"
+    >Admin</a
+  >
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
